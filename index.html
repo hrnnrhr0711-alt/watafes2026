@@ -349,7 +349,7 @@
             display: none;
             background-color: var(--white);
             border-radius: 15px;
-            padding: 15px 12px;
+            padding: 10px 0;
             position: relative;
         }
 
@@ -357,67 +357,85 @@
             display: block;
         }
 
-        /* タイムテーブル（タイムライン形式） */
-        .tt-timeline-container {
+        .time-slot {
             display: flex;
-            flex-direction: column;
-            gap: 12px;
-            position: relative;
+            border-bottom: 1px solid #eee;
+            height: 60px; /* 30分 = 60px (1分 = 2px) */
+            padding: 0 15px;
+            align-items: flex-start;
+            box-sizing: border-box;
         }
 
-        .tt-slot-card {
-            background-color: #fafbfc;
-            border: 1px solid #eef1f4;
-            border-radius: 14px;
-            padding: 10px 14px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        .time-slot:last-child {
+            border-bottom: none;
         }
 
-        .tt-slot-header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
+        .time-label {
+            width: 55px;
+            color: var(--sub-text-color);
+            font-size: 0.85rem;
+            padding-top: 2px;
+            flex-shrink: 0;
         }
 
-        .tt-slot-time {
-            font-weight: bold;
-            font-size: 0.88rem;
-            color: var(--primary-color);
-            background-color: #fdf2f4;
-            padding: 3px 10px;
-            border-radius: 12px;
-        }
-
-        .tt-slot-name {
-            font-weight: bold;
-            font-size: 0.95rem;
-            color: var(--text-color);
-        }
-
-        .tt-slot-img-wrap {
-            width: 90%;
+        /* 各出演者ブロック（時間・縦幅連動） */
+        .tt-event-block {
+            position: absolute;
+            left: 65px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid #e8d0d5;
             border-radius: 10px;
             overflow: hidden;
-            background-color: #eee;
-            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(214, 133, 151, 0.12);
+            z-index: 5;
+            padding: 4px 8px;
+            gap: 10px;
         }
 
-        .tt-slot-img {
+        .tt-event-img-wrap {
+            height: 100%;
+            width: 38%;
+            max-width: 140px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background-color: #f5f5f5;
+        }
+
+        .tt-event-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
 
-        /* 時間に応じた縦幅バリエーション */
-        .height-25m { height: 110px; }
-        .height-20m { height: 95px; }
+        .tt-event-info {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
+        .tt-event-time {
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tt-event-name {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--text-color);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* タイムバー（現在時刻線） */
         .time-bar {
             position: absolute;
             left: 0;
@@ -433,7 +451,7 @@
         .time-bar::before {
             content: '';
             position: absolute;
-            left: 10px;
+            left: 50px;
             top: -4px;
             width: 10px;
             height: 10px;
@@ -445,9 +463,9 @@
             text-align: center;
             font-weight: bold;
             font-size: 1.1rem;
-            color: #bbb;
+            color: #ccc;
             letter-spacing: 2px;
-            padding: 60px 0;
+            padding: 120px 0;
         }
 
         /* --- [ページ別] チケット --- */
@@ -1017,132 +1035,127 @@
 
         <!-- Day 1 (9/13) -->
         <div id="timetable-day1" class="timetable-frame active card">
-            <div class="tt-timeline-container">
-                <!-- 18:30-18:55 小鳥みあ -->
-                <div class="tt-slot-card">
-                    <div class="tt-slot-header">
-                        <span class="tt-slot-time">18:30 - 18:55</span>
-                        <span class="tt-slot-name">小鳥みあ🐥💖</span>
-                    </div>
-                    <div class="tt-slot-img-wrap height-25m">
-                        <img src="IMG_0192.png" alt="小鳥みあ🐥💖" class="tt-slot-img">
-                    </div>
-                </div>
+            <div id="bar-day1" class="time-bar"></div>
+            
+            <!-- 時間軸グリッド (18:00〜24:00 各60px = 30分) -->
+            <div class="time-slot"><div class="time-label">18:00</div></div>
+            <div class="time-slot"><div class="time-label">18:30</div></div>
+            <div class="time-slot"><div class="time-label">19:00</div></div>
+            <div class="time-slot"><div class="time-label">19:30</div></div>
+            <div class="time-slot"><div class="time-label">20:00</div></div>
+            <div class="time-slot"><div class="time-label">20:30</div></div>
+            <div class="time-slot"><div class="time-label">21:00</div></div>
+            <div class="time-slot"><div class="time-label">21:30</div></div>
+            <div class="time-slot"><div class="time-label">22:00</div></div>
+            <div class="time-slot"><div class="time-label">22:30</div></div>
+            <div class="time-slot"><div class="time-label">23:00</div></div>
+            <div class="time-slot"><div class="time-label">23:30</div></div>
+            <div class="time-slot"><div class="time-label">24:00</div></div>
 
-                <!-- 19:00-19:25 焼杉りんご -->
-                <div class="tt-slot-card">
-                    <div class="tt-slot-header">
-                        <span class="tt-slot-time">19:00 - 19:25</span>
-                        <span class="tt-slot-name">焼杉りんご</span>
-                    </div>
-                    <div class="tt-slot-img-wrap height-25m">
-                        <img src="IMG_0309.jpeg" alt="焼杉りんご" class="tt-slot-img">
-                    </div>
+            <!-- 出演者ブロック（時間の縦幅連動・線の上に重なる配置） -->
+            <!-- 18:30-18:55 (top: 70px, height: 50px) -->
+            <div class="tt-event-block" style="top: 70px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0192.png" alt="小鳥みあ🐥💖" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">18:30 - 18:55</span>
+                    <span class="tt-event-name">小鳥みあ🐥💖</span>
                 </div>
+            </div>
 
-                <!-- 19:30-19:55 凍 らい -->
-                <div class="tt-slot-card">
-                    <div class="tt-slot-header">
-                        <span class="tt-slot-time">19:30 - 19:55</span>
-                        <span class="tt-slot-name">凍 らい</span>
-                    </div>
-                    <div class="tt-slot-img-wrap height-25m">
-                        <img src="IMG_0193.png" alt="凍 らい" class="tt-slot-img">
-                    </div>
+            <!-- 19:00-19:25 (top: 130px, height: 50px) -->
+            <div class="tt-event-block" style="top: 130px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0309.jpeg" alt="焼杉りんご" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">19:00 - 19:25</span>
+                    <span class="tt-event-name">焼杉りんご</span>
                 </div>
+            </div>
 
-                <!-- 20:05-20:30 ふたば -->
-                <div class="tt-slot-card">
-                    <div class="tt-slot-header">
-                        <span class="tt-slot-time">20:05 - 20:30</span>
-                        <span class="tt-slot-name">ふたば🐰🌱</span>
-                    </div>
-                    <div class="tt-slot-img-wrap height-25m">
-                        <img src="IMG_0312.png" alt="ふたば🐰🌱" class="tt-slot-img">
-                    </div>
+            <!-- 19:30-19:55 (top: 190px, height: 50px) -->
+            <div class="tt-event-block" style="top: 190px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0193.png" alt="凍 らい" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">19:30 - 19:55</span>
+                    <span class="tt-event-name">凍 らい</span>
                 </div>
+            </div>
 
-                <!-- 20:35-21:00 ジェラ -->
-                <div class="tt-slot-card">
-                    <div class="tt-slot-header">
-                        <span class="tt-slot-time">20:35 - 21:00</span>
-                        <span class="tt-slot-name">ジェラ🍨🥂🎶</span>
-                    </div>
-                    <div class="tt-slot-img-wrap height-25m">
-                        <img src="IMG_0254.png" alt="ジェラ🍨🥂🎶" class="tt-slot-img">
-                    </div>
+            <!-- 20:05-20:30 (top: 260px, height: 50px) -->
+            <div class="tt-event-block" style="top: 260px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0312.png" alt="ふたば🐰🌱" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">20:05 - 20:30</span>
+                    <span class="tt-event-name">ふたば🐰🌱</span>
                 </div>
+            </div>
 
-                <!-- 21:05-21:30 ﾖｼﾖｼｵﾂｷﾐ -->
-                <div class="tt-slot-card">
-                    <div class="tt-slot-header">
-                        <span class="tt-slot-time">21:05 - 21:30</span>
-                        <span class="tt-slot-name">ﾖｼﾖｼｵﾂｷﾐ🫠</span>
-                    </div>
-                    <div class="tt-slot-img-wrap height-25m">
-                        <img src="IMG_0194.png" alt="ﾖｼﾖｼｵﾂｷﾐ🫠" class="tt-slot-img">
-                    </div>
+            <!-- 20:35-21:00 (top: 320px, height: 50px) -->
+            <div class="tt-event-block" style="top: 320px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0254.png" alt="ジェラ🍨🥂🎶" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">20:35 - 21:00</span>
+                    <span class="tt-event-name">ジェラ🍨🥂🎶</span>
                 </div>
+            </div>
 
-                <!-- 21:40-22:05 森乃くま -->
-                <div class="tt-slot-card">
-                    <div class="tt-slot-header">
-                        <span class="tt-slot-time">21:40 - 22:05</span>
-                        <span class="tt-slot-name">森乃くま🧸🌳</span>
-                    </div>
-                    <div class="tt-slot-img-wrap height-25m">
-                        <img src="IMG_0195.png" alt="森乃くま🧸🌳" class="tt-slot-img">
-                    </div>
+            <!-- 21:05-21:30 (top: 380px, height: 50px) -->
+            <div class="tt-event-block" style="top: 380px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0194.png" alt="ﾖｼﾖｼｵﾂｷﾐ🫠" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">21:05 - 21:30</span>
+                    <span class="tt-event-name">ﾖｼﾖｼｵﾂｷﾐ🫠</span>
                 </div>
+            </div>
 
-                <!-- 22:10-22:35 ぴこち -->
-                <div class="tt-slot-card">
-                    <div class="tt-slot-header">
-                        <span class="tt-slot-time">22:10 - 22:35</span>
-                        <span class="tt-slot-name">ぴこち🐰</span>
-                    </div>
-                    <div class="tt-slot-img-wrap height-25m">
-                        <img src="IMG_0314.png" alt="ぴこち🐰" class="tt-slot-img">
-                    </div>
+            <!-- 21:40-22:05 (top: 450px, height: 50px) -->
+            <div class="tt-event-block" style="top: 450px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0195.png" alt="森乃くま🧸🌳" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">21:40 - 22:05</span>
+                    <span class="tt-event-name">森乃くま🧸🌳</span>
                 </div>
+            </div>
 
-                <!-- 22:40-23:05 高城 -->
-                <div class="tt-slot-card">
-                    <div class="tt-slot-header">
-                        <span class="tt-slot-time">22:40 - 23:05</span>
-                        <span class="tt-slot-name">高城💩🍎</span>
-                    </div>
-                    <div class="tt-slot-img-wrap height-25m">
-                        <img src="IMG_0196.png" alt="高城💩🍎" class="tt-slot-img">
-                    </div>
+            <!-- 22:10-22:35 (top: 510px, height: 50px) -->
+            <div class="tt-event-block" style="top: 510px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0314.png" alt="ぴこち🐰" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">22:10 - 22:35</span>
+                    <span class="tt-event-name">ぴこち🐰</span>
                 </div>
+            </div>
 
-                <!-- 23:10-23:35 音無ななし -->
-                <div class="tt-slot-card">
-                    <div class="tt-slot-header">
-                        <span class="tt-slot-time">23:10 - 23:35</span>
-                        <span class="tt-slot-name">音無ななし🍁🥂🌕</span>
-                    </div>
-                    <div class="tt-slot-img-wrap height-25m">
-                        <img src="IMG_0319.png" alt="音無ななし🍁🥂🌕" class="tt-slot-img">
-                    </div>
+            <!-- 22:40-23:05 (top: 570px, height: 50px) -->
+            <div class="tt-event-block" style="top: 570px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0196.png" alt="高城💩🍎" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">22:40 - 23:05</span>
+                    <span class="tt-event-name">高城💩🍎</span>
                 </div>
+            </div>
 
-                <!-- 23:40-24:00 わたり -->
-                <div class="tt-slot-card">
-                    <div class="tt-slot-header">
-                        <span class="tt-slot-time">23:40 - 24:00</span>
-                        <span class="tt-slot-name">わたり🍅🍜</span>
-                    </div>
-                    <div class="tt-slot-img-wrap height-20m">
-                        <img src="IMG_9595.png" alt="わたり🍅🍜" class="tt-slot-img">
-                    </div>
+            <!-- 23:10-23:35 (top: 630px, height: 50px) -->
+            <div class="tt-event-block" style="top: 630px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0319.png" alt="音無ななし🍁🥂🌕" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">23:10 - 23:35</span>
+                    <span class="tt-event-name">音無ななし🍁🥂🌕</span>
+                </div>
+            </div>
+
+            <!-- 23:40-24:00 (top: 690px, height: 40px) -->
+            <div class="tt-event-block" style="top: 690px; height: 40px;">
+                <div class="tt-event-img-wrap"><img src="IMG_9595.png" alt="わたり🍅🍜" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">23:40 - 24:00</span>
+                    <span class="tt-event-name">わたり🍅🍜</span>
                 </div>
             </div>
         </div>
 
         <!-- Day 2 (9/19) -->
         <div id="timetable-day2" class="timetable-frame card">
+            <div id="bar-day2" class="time-bar"></div>
             <div class="timetable-cs">COMING SOON</div>
         </div>
     </main>
@@ -1450,6 +1463,10 @@
                 }
             });
 
+            if (pageId === 'schedule') {
+                updateTimeBar();
+            }
+
             window.scrollTo(0, 0);
         }
 
@@ -1477,7 +1494,36 @@
             }
             
             document.getElementById('timetable-' + dayId).classList.add('active');
+            updateTimeBar();
         }
+
+        // --- タイムバー更新 ---
+        function updateTimeBar() {
+            const now = new Date();
+            const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+            const startMinutes = 18 * 60; // 18:00
+            const endMinutes = 24 * 60;   // 24:00
+
+            const bars = document.querySelectorAll('.time-bar');
+
+            if (currentMinutes < startMinutes || currentMinutes > endMinutes) {
+                bars.forEach(bar => bar.style.display = 'none');
+                return;
+            }
+
+            const slotHeight = 60; // 30分 = 60px
+            const minutesFromStart = currentMinutes - startMinutes;
+            const topPx = 10 + (minutesFromStart / 30) * slotHeight;
+
+            bars.forEach(bar => {
+                bar.style.display = 'block';
+                bar.style.top = topPx + 'px';
+            });
+        }
+
+        updateTimeBar();
+        setInterval(updateTimeBar, 60000);
 
         // --- モーダル制御 & 統合オンラインデータ連携 ---
         let selectedTicketType = "";
