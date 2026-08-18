@@ -459,15 +459,6 @@
             border-radius: 50%;
         }
 
-        .timetable-cs {
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #ccc;
-            letter-spacing: 2px;
-            padding: 120px 0;
-        }
-
         /* --- [ページ別] チケット --- */
         .ticket-hero {
             background: linear-gradient(135deg, #e499a9 0%, #f1c9d2 100%);
@@ -1156,7 +1147,121 @@
         <!-- Day 2 (9/19) -->
         <div id="timetable-day2" class="timetable-frame card">
             <div id="bar-day2" class="time-bar"></div>
-            <div class="timetable-cs">COMING SOON</div>
+            
+            <!-- 時間軸グリッド (18:00〜24:00 各60px = 30分) -->
+            <div class="time-slot"><div class="time-label">18:00</div></div>
+            <div class="time-slot"><div class="time-label">18:30</div></div>
+            <div class="time-slot"><div class="time-label">19:00</div></div>
+            <div class="time-slot"><div class="time-label">19:30</div></div>
+            <div class="time-slot"><div class="time-label">20:00</div></div>
+            <div class="time-slot"><div class="time-label">20:30</div></div>
+            <div class="time-slot"><div class="time-label">21:00</div></div>
+            <div class="time-slot"><div class="time-label">21:30</div></div>
+            <div class="time-slot"><div class="time-label">22:00</div></div>
+            <div class="time-slot"><div class="time-label">22:30</div></div>
+            <div class="time-slot"><div class="time-label">23:00</div></div>
+            <div class="time-slot"><div class="time-label">23:30</div></div>
+            <div class="time-slot"><div class="time-label">24:00</div></div>
+
+            <!-- 9/19 出演者ブロック（時間の縦幅連動・線の上に重なる配置） -->
+            <!-- 18:30-18:55 奏たくや (top: 70px, height: 50px) -->
+            <div class="tt-event-block" style="top: 70px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0311.jpeg" alt="奏たくや🐺💨" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">18:30 - 18:55</span>
+                    <span class="tt-event-name">奏たくや🐺💨</span>
+                </div>
+            </div>
+
+            <!-- 19:00-19:25 さくは (top: 130px, height: 50px) -->
+            <div class="tt-event-block" style="top: 130px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0257.png" alt="さくは" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">19:00 - 19:25</span>
+                    <span class="tt-event-name">さくは</span>
+                </div>
+            </div>
+
+            <!-- 19:30-19:55 白流 らこ (top: 190px, height: 50px) -->
+            <div class="tt-event-block" style="top: 190px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0315.png" alt="白流 らこ" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">19:30 - 19:55</span>
+                    <span class="tt-event-name">白流 らこ</span>
+                </div>
+            </div>
+
+            <!-- 20:05-20:30 笛吹れた (top: 260px, height: 50px) -->
+            <div class="tt-event-block" style="top: 260px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0199.png" alt="笛吹れた" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">20:05 - 20:30</span>
+                    <span class="tt-event-name">笛吹れた</span>
+                </div>
+            </div>
+
+            <!-- 20:35-21:00 すーぱーよにこ (top: 320px, height: 50px) -->
+            <div class="tt-event-block" style="top: 320px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0198.png" alt="すーぱーよにこ🦄🩵" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">20:35 - 21:00</span>
+                    <span class="tt-event-name">すーぱーよにこ🦄🩵</span>
+                </div>
+            </div>
+
+            <!-- 21:05-21:30 穂米こめ (top: 380px, height: 50px) -->
+            <div class="tt-event-block" style="top: 380px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0259.png" alt="穂米こめ" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">21:05 - 21:30</span>
+                    <span class="tt-event-name">穂米こめ</span>
+                </div>
+            </div>
+
+            <!-- 21:40-22:05 時狐(とき) (top: 450px, height: 50px) -->
+            <div class="tt-event-block" style="top: 450px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0317.png" alt="時狐(とき)" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">21:40 - 22:05</span>
+                    <span class="tt-event-name">時狐(とき)</span>
+                </div>
+            </div>
+
+            <!-- 22:10-22:35 月見ねね (top: 510px, height: 50px) -->
+            <div class="tt-event-block" style="top: 510px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0260.png" alt="月見ねね" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">22:10 - 22:35</span>
+                    <span class="tt-event-name">月見ねね</span>
+                </div>
+            </div>
+
+            <!-- 22:40-23:05 蘭堂 凛夢 (top: 570px, height: 50px) -->
+            <div class="tt-event-block" style="top: 570px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0353.jpeg" alt="蘭堂 凛夢🐰🩵321" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">22:40 - 23:05</span>
+                    <span class="tt-event-name">蘭堂 凛夢🐰🩵321</span>
+                </div>
+            </div>
+
+            <!-- 23:10-23:35 紫月クロエ (top: 630px, height: 50px) -->
+            <div class="tt-event-block" style="top: 630px; height: 50px;">
+                <div class="tt-event-img-wrap"><img src="IMG_0346.jpeg" alt="紫月クロエ🐈‍⬛☪ ‎🎶" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">23:10 - 23:35</span>
+                    <span class="tt-event-name">紫月クロエ🐈‍⬛☪ ‎🎶</span>
+                </div>
+            </div>
+
+            <!-- 23:40-24:00 わたり (top: 690px, height: 40px) -->
+            <div class="tt-event-block" style="top: 690px; height: 40px;">
+                <div class="tt-event-img-wrap"><img src="IMG_9595.png" alt="わたり🍅🍜" class="tt-event-img"></div>
+                <div class="tt-event-info">
+                    <span class="tt-event-time">23:40 - 24:00</span>
+                    <span class="tt-event-name">わたり🍅🍜</span>
+                </div>
+            </div>
         </div>
     </main>
 
