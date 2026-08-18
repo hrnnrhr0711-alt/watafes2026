@@ -378,7 +378,7 @@
             flex-shrink: 0;
         }
 
-        /* 各出演者ブロック（時間・縦幅連動） */
+        /* 各出演者ブロック（時間・縦幅連動 & リンク化） */
         .tt-event-block {
             position: absolute;
             left: 65px;
@@ -393,6 +393,14 @@
             z-index: 5;
             padding: 4px 8px;
             gap: 10px;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .tt-event-block:active {
+            transform: scale(0.98);
         }
 
         .tt-event-img-wrap {
@@ -1043,105 +1051,105 @@
             <div class="time-slot"><div class="time-label">23:30</div></div>
             <div class="time-slot"><div class="time-label">24:00</div></div>
 
-            <!-- 出演者ブロック（時間の縦幅連動・線の上に重なる配置） -->
-            <!-- 18:30-18:55 (top: 70px, height: 50px) -->
-            <div class="tt-event-block" style="top: 70px; height: 50px;">
+            <!-- 出演者ブロック（タップでREALITYへ遷移） -->
+            <!-- 18:30-18:55 小鳥みあ -->
+            <a href="https://reality.app/profile/cbfea013?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 70px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0192.png" alt="小鳥みあ🐥💖" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">18:30 - 18:55</span>
                     <span class="tt-event-name">小鳥みあ🐥💖</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 19:00-19:25 (top: 130px, height: 50px) -->
-            <div class="tt-event-block" style="top: 130px; height: 50px;">
+            <!-- 19:00-19:25 焼杉りんご -->
+            <a href="https://reality.app/profile/ff43ca46?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 130px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0309.jpeg" alt="焼杉りんご" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">19:00 - 19:25</span>
                     <span class="tt-event-name">焼杉りんご</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 19:30-19:55 (top: 190px, height: 50px) -->
-            <div class="tt-event-block" style="top: 190px; height: 50px;">
+            <!-- 19:30-19:55 凍 らい -->
+            <a href="https://reality.app/profile/308935d5?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 190px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0193.png" alt="凍 らい" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">19:30 - 19:55</span>
                     <span class="tt-event-name">凍 らい</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 20:05-20:30 (top: 260px, height: 50px) -->
-            <div class="tt-event-block" style="top: 260px; height: 50px;">
+            <!-- 20:05-20:30 ふたば -->
+            <a href="https://reality.app/profile/6b0b1ee7?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 260px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0312.png" alt="ふたば🐰🌱" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">20:05 - 20:30</span>
                     <span class="tt-event-name">ふたば🐰🌱</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 20:35-21:00 (top: 320px, height: 50px) -->
-            <div class="tt-event-block" style="top: 320px; height: 50px;">
+            <!-- 20:35-21:00 ジェラ -->
+            <a href="https://reality.app/profile/4a1b5f42?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 320px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0254.png" alt="ジェラ🍨🥂🎶" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">20:35 - 21:00</span>
                     <span class="tt-event-name">ジェラ🍨🥂🎶</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 21:05-21:30 (top: 380px, height: 50px) -->
-            <div class="tt-event-block" style="top: 380px; height: 50px;">
+            <!-- 21:05-21:30 ﾖｼﾖｼｵﾂｷﾐ -->
+            <a href="https://reality.app/profile/cb056414?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 380px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0194.png" alt="ﾖｼﾖｼｵﾂｷﾐ🫠" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">21:05 - 21:30</span>
                     <span class="tt-event-name">ﾖｼﾖｼｵﾂｷﾐ🫠</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 21:40-22:05 (top: 450px, height: 50px) -->
-            <div class="tt-event-block" style="top: 450px; height: 50px;">
+            <!-- 21:40-22:05 森乃くま -->
+            <a href="https://reality.app/profile/0c4e1540?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 450px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0195.png" alt="森乃くま🧸🌳" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">21:40 - 22:05</span>
                     <span class="tt-event-name">森乃くま🧸🌳</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 22:10-22:35 (top: 510px, height: 50px) -->
-            <div class="tt-event-block" style="top: 510px; height: 50px;">
+            <!-- 22:10-22:35 ぴこち -->
+            <a href="https://reality.app/profile/036219f5?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 510px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0314.png" alt="ぴこち🐰" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">22:10 - 22:35</span>
                     <span class="tt-event-name">ぴこち🐰</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 22:40-23:05 (top: 570px, height: 50px) -->
-            <div class="tt-event-block" style="top: 570px; height: 50px;">
+            <!-- 22:40-23:05 高城 -->
+            <a href="https://reality.app/profile/9dc33836?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 570px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0196.png" alt="高城💩🍎" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">22:40 - 23:05</span>
                     <span class="tt-event-name">高城💩🍎</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 23:10-23:35 (top: 630px, height: 50px) -->
-            <div class="tt-event-block" style="top: 630px; height: 50px;">
+            <!-- 23:10-23:35 音無ななし -->
+            <a href="https://reality.app/profile/12fb9cc4?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 630px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0319.png" alt="音無ななし🍁🥂🌕" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">23:10 - 23:35</span>
                     <span class="tt-event-name">音無ななし🍁🥂🌕</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 23:40-24:00 (top: 690px, height: 40px) -->
-            <div class="tt-event-block" style="top: 690px; height: 40px;">
+            <!-- 23:40-24:00 わたり -->
+            <a href="https://reality.app/profile/be30eac6?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 690px; height: 40px;">
                 <div class="tt-event-img-wrap"><img src="IMG_9595.png" alt="わたり🍅🍜" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">23:40 - 24:00</span>
                     <span class="tt-event-name">わたり🍅🍜</span>
                 </div>
-            </div>
+            </a>
         </div>
 
         <!-- Day 2 (9/19) -->
@@ -1163,105 +1171,105 @@
             <div class="time-slot"><div class="time-label">23:30</div></div>
             <div class="time-slot"><div class="time-label">24:00</div></div>
 
-            <!-- 9/19 出演者ブロック（時間の縦幅連動・線の上に重なる配置） -->
-            <!-- 18:30-18:55 奏たくや (top: 70px, height: 50px) -->
-            <div class="tt-event-block" style="top: 70px; height: 50px;">
+            <!-- 9/19 出演者ブロック（タップでREALITYへ遷移） -->
+            <!-- 18:30-18:55 奏たくや -->
+            <a href="https://reality.app/profile/800ce677?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 70px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0311.jpeg" alt="奏たくや🐺💨" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">18:30 - 18:55</span>
                     <span class="tt-event-name">奏たくや🐺💨</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 19:00-19:25 さくは (top: 130px, height: 50px) -->
-            <div class="tt-event-block" style="top: 130px; height: 50px;">
+            <!-- 19:00-19:25 さくは -->
+            <a href="https://reality.app/profile/b3858806?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 130px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0257.png" alt="さくは" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">19:00 - 19:25</span>
                     <span class="tt-event-name">さくは</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 19:30-19:55 白流 らこ (top: 190px, height: 50px) -->
-            <div class="tt-event-block" style="top: 190px; height: 50px;">
+            <!-- 19:30-19:55 白流 らこ -->
+            <a href="https://reality.app/profile/0865df15?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 190px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0315.png" alt="白流 らこ" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">19:30 - 19:55</span>
                     <span class="tt-event-name">白流 らこ</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 20:05-20:30 笛吹れた (top: 260px, height: 50px) -->
-            <div class="tt-event-block" style="top: 260px; height: 50px;">
+            <!-- 20:05-20:30 笛吹れた -->
+            <a href="https://reality.app/profile/bdc56bd4?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 260px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0199.png" alt="笛吹れた" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">20:05 - 20:30</span>
                     <span class="tt-event-name">笛吹れた</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 20:35-21:00 すーぱーよにこ (top: 320px, height: 50px) -->
-            <div class="tt-event-block" style="top: 320px; height: 50px;">
+            <!-- 20:35-21:00 すーぱーよにこ -->
+            <a href="https://reality.app/profile/38e0e880?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 320px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0198.png" alt="すーぱーよにこ🦄🩵" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">20:35 - 21:00</span>
                     <span class="tt-event-name">すーぱーよにこ🦄🩵</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 21:05-21:30 穂米こめ (top: 380px, height: 50px) -->
-            <div class="tt-event-block" style="top: 380px; height: 50px;">
+            <!-- 21:05-21:30 穂米こめ -->
+            <a href="https://reality.app/profile/ae88c544?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 380px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0259.png" alt="穂米こめ" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">21:05 - 21:30</span>
                     <span class="tt-event-name">穂米こめ</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 21:40-22:05 時狐(とき) (top: 450px, height: 50px) -->
-            <div class="tt-event-block" style="top: 450px; height: 50px;">
+            <!-- 21:40-22:05 時狐(とき) -->
+            <a href="https://reality.app/profile/aada24d2?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 450px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0317.png" alt="時狐(とき)" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">21:40 - 22:05</span>
                     <span class="tt-event-name">時狐(とき)</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 22:10-22:35 月見ねね (top: 510px, height: 50px) -->
-            <div class="tt-event-block" style="top: 510px; height: 50px;">
+            <!-- 22:10-22:35 月見ねね -->
+            <a href="https://reality.app/profile/54f62cc7?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 510px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0260.png" alt="月見ねね" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">22:10 - 22:35</span>
                     <span class="tt-event-name">月見ねね</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 22:40-23:05 蘭堂 凛夢 (top: 570px, height: 50px) -->
-            <div class="tt-event-block" style="top: 570px; height: 50px;">
+            <!-- 22:40-23:05 蘭堂 凛夢 -->
+            <a href="https://reality.app/profile/fbe260b6?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 570px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0353.jpeg" alt="蘭堂 凛夢🐰🩵321" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">22:40 - 23:05</span>
                     <span class="tt-event-name">蘭堂 凛夢🐰🩵321</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 23:10-23:35 紫月クロエ (top: 630px, height: 50px) -->
-            <div class="tt-event-block" style="top: 630px; height: 50px;">
+            <!-- 23:10-23:35 紫月クロエ -->
+            <a href="https://reality.app/profile/90b024d1?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 630px; height: 50px;">
                 <div class="tt-event-img-wrap"><img src="IMG_0346.jpeg" alt="紫月クロエ🐈‍⬛☪ ‎🎶" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">23:10 - 23:35</span>
                     <span class="tt-event-name">紫月クロエ🐈‍⬛☪ ‎🎶</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- 23:40-24:00 わたり (top: 690px, height: 40px) -->
-            <div class="tt-event-block" style="top: 690px; height: 40px;">
+            <!-- 23:40-24:00 わたり -->
+            <a href="https://reality.app/profile/be30eac6?adj_t=8ogcewh_z9yhix5" target="_blank" rel="noopener noreferrer" class="tt-event-block" style="top: 690px; height: 40px;">
                 <div class="tt-event-img-wrap"><img src="IMG_9595.png" alt="わたり🍅🍜" class="tt-event-img"></div>
                 <div class="tt-event-info">
                     <span class="tt-event-time">23:40 - 24:00</span>
                     <span class="tt-event-name">わたり🍅🍜</span>
                 </div>
-            </div>
+            </a>
         </div>
     </main>
 
